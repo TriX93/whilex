@@ -19,17 +19,15 @@
  *   You should have received a copy of the GNU Affero General Public License
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+final class setup {
 
-class setup
-{
-	public function install($db,$dbhost,$dbuser,$dbpwd)
-	{
+	public function install($db,$dbhost,$dbuser,$dbpwd){
 		$url = "http://".$_SERVER['SERVER_NAME']."/";
 		$dbtype = "mysql:host=$dbhost";
 		$mysql = new PDO($dbtype , $dbuser, $dbpwd);
 		
 		$query = $mysql->prepare("
-			CREATE DATABASE IF NOT EXISTS ? DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+			CREATE DATABASE IF NOT EXISTS ? DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci
 			USE ?;
 			
 			CREATE TABLE IF NOT EXISTS `users` (
@@ -45,7 +43,7 @@ class setup
 			  `del_status` bigint(20) NOT NULL DEFAULT '0',
 			  `time` date NOT NULL,
 			  PRIMARY KEY (`id`)
-			) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+			) ENGINE=INNODB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 			CREATE TABLE IF NOT EXISTS `post` (
 			  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
@@ -59,7 +57,7 @@ class setup
 			  `del_status` bigint(20) NOT NULL DEFAULT '0',
 			  `time` date NOT NULL,
 			  PRIMARY KEY (`id`)
-			) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+			) ENGINE=INNODB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 			
 			CREATE TABLE IF NOT EXISTS `pull` (
 			  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
@@ -73,7 +71,7 @@ class setup
 			  `del_status` bigint(20) NOT NULL DEFAULT '0',
 			  `time` date NOT NULL,
 			  PRIMARY KEY (`id`)
-			) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+			) ENGINE=INNODB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 		"); 
 		$query->execute(array($db,$db));
 

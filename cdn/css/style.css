@@ -412,15 +412,59 @@ table {
 	z-index: 9999;
 }
 
-#logo{
-	background: url("../img/whilex_black.png") no-repeat;
-	width: 636px;
-	height: 220px; 
-	margin: 0 auto;
+a{
+color: #29ba25;
+text-decoration: none;
 }
+
+.valign-bottom{
+vertical-align: bottom;
+}
+
+/* Logo by Mte90 */
+
+.logo {
+	font-family: 'Quattrocento Sans', sans-serif;
+	color: white;
+	font-size:6.5em;
+	line-height: 1.4em;
+	width: 9em;
+	margin:0 auto;
+	margin-top:0.6em;
+}
+
+.logo-name {
+	color:#29BA25;
+	margin:0px;
+	text-align:left;
+	text-indent:0px;
+	text-transform:none;
+}
+
+.logo-symbol {
+	font-family: 'Quantico', sans-serif;
+	color:#0054FF;
+	margin:0px;
+	font-size:0.95em;
+	line-height: 0.65em;
+}
+
+.logo-bracket {
+	color:white;
+	font-weight: normal;
+}
+
+.logo-subtitle {
+	margin:0px;
+	font-size:0.66em;
+}
+
+/* Logo by Mte90 */
+
 #wrapper {
 	width: 710px;
 	margin: 30px auto;
+	margin-top: 10px;
 	padding: 0px 25px 25px 25px;
 	border: 12px solid #2e2e2e;
 	position:relative;
@@ -429,13 +473,13 @@ h1 {
 	text-transform: uppercase;
 	text-align: center;
 	margin: 0;
-	padding: 0.3em 0;
+	padding: -10px 0;
 	text-indent:-99999px;
 }
 #nav {
 	list-style: none;
 	padding: 0;
-	margin: 10px 0 20px 0;
+	margin: 10px 0 10px 0;
 	background: #2e2e2e url(images/nav_bar.jpg) repeat-x;
 	display: block;
 	overflow: hidden;
@@ -467,8 +511,7 @@ h1 {
 	text-indent: -9999em;
 }
 
-#content {
-}
+
 h2 {
 	margin: 0;
 	padding: 0.5em 0;
@@ -477,8 +520,8 @@ h2 {
 }
 p {
 	margin: 0;
-	padding: 0.4em 0;
-	color:#686868;
+	padding: 0;
+	color:#FFFFFF;
 	line-height:1.4em;
 }
 #content img.right {
