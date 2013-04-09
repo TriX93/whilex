@@ -3,12 +3,19 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="stylesheet" type="text/css" href="cdn/css/style.css" />
+<link rel="stylesheet" type="text/css" href="../cdn/css/style.css" />
 <title>while($x) { Developer Community }</title>
 </head>
 <body>
 <div id="container">
-	<div id="logo"></div>
+<!-- Logo by Mte90 -->
+	<div class="logo">
+  
+		<h1 class="logo-name">while <span class="logo-bracket">(</span><span class="logo-symbol">$x</span><span class="logo-bracket">)</span></h1>
+		<h3 class="logo-subtitle">Italian Developers Community</h3>
+  
+	</div>
+<!-- Logo by Mte90 -->
     <div id="wrapper">
 		<h1>Home</h1>
 		<ul id="nav">
