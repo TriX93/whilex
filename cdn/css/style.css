@@ -417,6 +417,10 @@ color: #29ba25;
 text-decoration: none;
 }
 
+.valign-bottom{
+vertical-align: bottom;
+}
+
 #logo{
 	background: url("../img/whilex_black.png") no-repeat;
 	width: 636px;

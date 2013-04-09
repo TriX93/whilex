@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" href="cdn/css/style.css" />
-<title>Home</title>
+<title>while($x) { Developer Community }</title>
 </head>
 <body>
 <div id="container">
@@ -26,11 +26,12 @@
 			   Una volta nella sezione tutti i developer, insieme, faranno le loro proposte:<br />
 			   - Sviluppiamo una sezione stile stackoverflow?<br />
 			   - Facciamo un login tramite facebook?<br />
+			   - Sviluppiamo un app android/iphone del progetto?<br />
 			   - Usiamo PDO al posto di MYSQLi?<br />
-			   A queste domande voteranno i developer MASTER, al raggiungimento del 51% dei voti di approvazione la domanda verrà spostata nella sezione sviluppo e i developer impegnati al progetto la realizzeranno.
+			   A queste domande (di esempio) voteranno i developer MASTER, al raggiungimento del 51% dei voti di approvazione la domanda verrà spostata nella sezione sviluppo e i developer impegnati al progetto la realizzeranno.
 			</p><br />
-			<h2>L'Obbietivo qual è?</h2>
-			<p>L'obbiettivo di questi sondaggi è di creare qualcosa che serve a noi developer. Ognuno propone di realizzare la piattaforma in un determinato modo perchè è di quei elementi e di quei strumenti che ha bisogno. Collaborando e trovando approvazione di tutti si realizzano cose insieme che servono a tutti.</p>
+			<h2>L'Obietivo qual è?</h2>
+			<p>L'obiettivo di questi sondaggi è di creare qualcosa che serve a noi developer. Ognuno propone di realizzare la piattaforma in un determinato modo perchè è di quei elementi e di quei strumenti che ha bisogno. Collaborando e trovando approvazione di tutti si realizzano cose insieme che servono a tutti.</p>
 			<br />
 			<h2>Developer Master?</h2>
 			<p>Esistono due tipi di developer del progetto: MASTER / SUPPORTER.<br />
@@ -53,8 +54,39 @@
 			<h2>Quando si inizia?</h2>
 			<p>Il 10 aprile vengono aperte le iscrizioni come developer di tipo "supporter". 
 			I developer master sono stati scelti per offrire un team equilibrato fra developer, 
-			grafici, sviluppatori android. </p>
+			grafici, sviluppatori android. </p><br />
+			
+			<script>
+			(function(d, s, id) {
+			  var js, fjs = d.getElementsByTagName(s)[0];
+			  if (d.getElementById(id)) return;
+			  js = d.createElement(s); js.id = id;
+			  js.src = "//connect.facebook.net/it_IT/all.js#xfbml=1";
+			  fjs.parentNode.insertBefore(js, fjs);
+			  }(document, 'script', 'facebook-jssdk'));
+			</script>
+			<table><div id="fb-root"></div>
+				<tr>
+					<td class="valign-bottom"><div class="g-plusone" data-size="medium" data-href="http://www.whilex.it"></div>
+						  <script type="text/javascript">
+						  window.___gcfg = {lang: 'it'};
+
+						  (function() {
+							var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+							po.src = 'https://apis.google.com/js/plusone.js';
+							var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+						  })();
+						</script>
+					</td>
+					<td class="valign-bottom">
+					<a href="https://twitter.com/share" class="twitter-share-button" data-via="PTKDev" data-lang="it">Tweet</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+					</td>
+					<td class="valign-bottom"><div class="fb-like" data-send="false" data-layout="button_count" data-width="130" data-show-faces="false"></div></td>
+				</tr>
+			</table><br />
 		</div>
+		
+		
 		<div id="foot">Copyright 2013</div>
     </div>
 </div>
