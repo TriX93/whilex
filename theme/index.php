@@ -10,10 +10,8 @@
 <div id="container">
 <!-- Logo by Mte90 -->
 	<div class="logo">
-  
 		<h1 class="logo-name">while <span class="logo-bracket">(</span><span class="logo-symbol">$x</span><span class="logo-bracket">)</span></h1>
 		<h3 class="logo-subtitle">Italian Developers Community</h3>
-  
 	</div>
 <!-- Logo by Mte90 -->
     <div id="wrapper">
@@ -37,7 +35,7 @@
 			   - Usiamo PDO al posto di MYSQLi?<br />
 			   A queste domande (di esempio) voteranno i developer MASTER, al raggiungimento del 51% dei voti di approvazione la domanda verrà spostata nella sezione sviluppo e i developer impegnati al progetto la realizzeranno.
 			</p><br />
-			<h2>L'Obietivo qual è?</h2>
+			<h2>L'Obiettivo qual è?</h2>
 			<p>L'obiettivo di questi sondaggi è di creare qualcosa che serve a noi developer. Ognuno propone di realizzare la piattaforma in un determinato modo perchè è di quei elementi e di quei strumenti che ha bisogno. Collaborando e trovando approvazione di tutti si realizzano cose insieme che servono a tutti.</p>
 			<br />
 			<h2>Developer Master?</h2>
