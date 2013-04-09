@@ -1,4 +1,4 @@
-![while($x)](http://whilex.it/cdn/img/whilex_white.png)
+![while($x)](http://whilex.it/cdn/img/whilex_github.png)
 
 ### while($x)
 
