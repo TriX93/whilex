@@ -1,5 +1,5 @@
 <script>
-$("title").html('Contact');
+$("title").html('Poll');
 </script>
-        <h2>Pull</h2>
+        <h2>Poll</h2>
         <p>Text </p>
