@@ -424,9 +424,9 @@ vertical-align: bottom;
 /* Logo by Mte90 */
 
 .logo {
-	font-family: 'Quattrocento Sans', sans-serif;
+	font-family: 'Quattrocento Sans', Sans, sans-serif;
 	color: white;
-	font-size:7em;
+	font-size:6em;
 	line-height: 1.4em;
 	margin-top:0.6em;
 	text-align: center;
@@ -441,7 +441,7 @@ vertical-align: bottom;
 }
 
 .logo-symbol {
-	font-family: 'Quantico', sans-serif;
+	font-family: 'Quantico', Sans, sans-serif;
 	color:#0054FF;
 	margin:0px;
 	font-size:0.95em;
