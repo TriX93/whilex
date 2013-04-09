@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="stylesheet" type="text/css" href="../cdn/css/style.css" />
+<link rel="stylesheet" type="text/css" href="cdn/css/style.css" />
 <title>while($x) { Developer Community }</title>
 </head>
 <body>
@@ -37,7 +37,7 @@
 			   - Usiamo PDO al posto di MYSQLi?<br />
 			   A queste domande (di esempio) voteranno i developer MASTER, al raggiungimento del 51% dei voti di approvazione la domanda verrà spostata nella sezione sviluppo e i developer impegnati al progetto la realizzeranno.
 			</p><br />
-			<h2>L'Obietivo qual è?</h2>
+			<h2>L'Obiettivo qual è?</h2>
 			<p>L'obiettivo di questi sondaggi è di creare qualcosa che serve a noi developer. Ognuno propone di realizzare la piattaforma in un determinato modo perchè è di quei elementi e di quei strumenti che ha bisogno. Collaborando e trovando approvazione di tutti si realizzano cose insieme che servono a tutti.</p>
 			<br />
 			<h2>Developer Master?</h2>
