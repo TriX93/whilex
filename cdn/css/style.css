@@ -426,17 +426,16 @@ vertical-align: bottom;
 .logo {
 	font-family: 'Quattrocento Sans', sans-serif;
 	color: white;
-	font-size:6.5em;
+	font-size:3em;
 	line-height: 1.4em;
-	width: 9em;
-	margin:0 auto;
 	margin-top:0.6em;
+	text-align: center;
 }
 
 .logo-name {
 	color:#29BA25;
 	margin:0px;
-	text-align:left;
+	text-align: center;
 	text-indent:0px;
 	text-transform:none;
 }
@@ -455,7 +454,7 @@ vertical-align: bottom;
 }
 
 .logo-subtitle {
-	margin:0px;
+	margin-top: 7px;
 	font-size:0.66em;
 }
 

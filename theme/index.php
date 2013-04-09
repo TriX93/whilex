@@ -10,10 +10,8 @@
 <div id="container">
 <!-- Logo by Mte90 -->
 	<div class="logo">
-  
 		<h1 class="logo-name">while <span class="logo-bracket">(</span><span class="logo-symbol">$x</span><span class="logo-bracket">)</span></h1>
 		<h3 class="logo-subtitle">Italian Developers Community</h3>
-  
 	</div>
 <!-- Logo by Mte90 -->
     <div id="wrapper">
@@ -58,6 +56,9 @@
 			<h2>GPL</h2>
 			<p>Tutto il progetto è sotto licenza AGPLv3 / GPLv3</p>
 			<br />
+			<h2>IRC</h2>
+			<p>Si comunica via IRC. Siamo nel server freenode: #whilex</p>
+			<br />
 			<h2>Quando si inizia?</h2>
 			<p>Il 10 aprile vengono aperte le iscrizioni come developer di tipo "supporter". 
 			I developer master sono stati scelti per offrire un team equilibrato fra developer, 
@@ -86,7 +87,7 @@
 						</script>
 					</td>
 					<td class="valign-bottom">
-					<a href="https://twitter.com/share" class="twitter-share-button" data-via="PTKDev" data-lang="it">Tweet</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+					<a href="https://twitter.com/share" class="twitter-share-button" data-via="while_x " data-lang="it">Tweet</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 					</td>
 					<td class="valign-bottom"><div class="fb-like" data-send="false" data-layout="button_count" data-width="130" data-show-faces="false"></div></td>
 				</tr>
