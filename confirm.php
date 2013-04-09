@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php
 /*
  * While($x) 
@@ -19,36 +20,27 @@
  *   You should have received a copy of the GNU Affero General Public License
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-	$db="whilex";
-	$dbhost="localhost";
-	$dbuser="root";
-	$dbpwd="password";
-		
-	$debug = 0;
-
-	function mysql_start(){
-		$db="whilex";
-		$dbhost="localhost";
-		$dbuser="root";
-		$dbpwd="password";
-	
-		$dbtype = "mysql:dbname=$db;host=$dbhost";
-
-		try {
-			$mysql = new PDO($dbtype , $dbuser, $dbpwd);
-		} catch (PDOException $e) {
-			echo 'MySQL Error: ' . $e->getMessage();
-		}
-		
-		mysql_connect($dbhost,$dbuser,$dbpwd) or die(mysql_error());
-		mysql_select_db($db) or die(mysql_error()); 
-		
-		return $mysql;
-	}
-
-	function mysql_kill($mysql){
-		$mysql = null;
-		
-		return 1;
-	}
+  include "mod/login/login.class.php";
+  include "security.core.php";
+  $login = new account();
 ?>
+<html>
+	<head>
+		<title>while($x) { conferma email }</title>
+		<meta charset="utf-8">
+	</head>
+
+	<body>
+		<p id="line1">TorEngine - Verifica Email </p>
+		<p>
+		<?php   
+			if(!empty($_GET['hash']) && !empty($_GET['mail'])){
+				$login->enable($_GET['hash'],$_GET['mail']);
+			}
+			header( "refresh:3;url=http://www.whilex.it/" ); 
+		?>
+		</p>
+		
+		<br />
+	</body>
+</html>

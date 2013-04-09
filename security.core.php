@@ -76,7 +76,7 @@ class phpSecurityClass
 	
 	public function password($input)
 	{	
-		return sha1(md5($input));
+		return sha512($input);
 	}
 	
 	public function url($input)
