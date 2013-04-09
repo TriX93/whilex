@@ -23,6 +23,6 @@
 	include "config.php";
 	include "db.core.php";
 	$setup = new setup();
-	$setup->install($db,$dbhost,$dbuser,$dbpwd);
+	//$setup->install($db,$dbhost,$dbuser,$dbpwd);
 	include "theme/index.php";
 ?>
