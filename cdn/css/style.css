@@ -412,6 +412,11 @@ table {
 	z-index: 9999;
 }
 
+a{
+color: #29ba25;
+text-decoration: none;
+}
+
 #logo{
 	background: url("../img/whilex_black.png") no-repeat;
 	width: 636px;
@@ -421,6 +426,7 @@ table {
 #wrapper {
 	width: 710px;
 	margin: 30px auto;
+	margin-top: 10px;
 	padding: 0px 25px 25px 25px;
 	border: 12px solid #2e2e2e;
 	position:relative;
@@ -429,13 +435,13 @@ h1 {
 	text-transform: uppercase;
 	text-align: center;
 	margin: 0;
-	padding: 0.3em 0;
+	padding: -10px 0;
 	text-indent:-99999px;
 }
 #nav {
 	list-style: none;
 	padding: 0;
-	margin: 10px 0 20px 0;
+	margin: 10px 0 10px 0;
 	background: #2e2e2e url(images/nav_bar.jpg) repeat-x;
 	display: block;
 	overflow: hidden;
@@ -467,8 +473,7 @@ h1 {
 	text-indent: -9999em;
 }
 
-#content {
-}
+
 h2 {
 	margin: 0;
 	padding: 0.5em 0;
@@ -477,8 +482,8 @@ h2 {
 }
 p {
 	margin: 0;
-	padding: 0.4em 0;
-	color:#686868;
+	padding: 0;
+	color:#FFFFFF;
 	line-height:1.4em;
 }
 #content img.right {
