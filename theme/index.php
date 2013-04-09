@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="stylesheet" type="text/css" href="../cdn/css/style.css" />
+<link rel="stylesheet" type="text/css" href="cdn/css/style.css" />
 <title>while($x) { Developer Community }</title>
 </head>
 <body>
