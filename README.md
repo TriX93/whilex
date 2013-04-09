@@ -7,7 +7,10 @@
 ### Installation
 
 Configure `config.php` with mysql database information (host, username, password).
+
 Dependences: 
+
 &bull; php => 5.3
+
 &bull; mysql => 5.3
 
