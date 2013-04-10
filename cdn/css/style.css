@@ -236,6 +236,8 @@ input::-moz-focus-inner {
 textarea {
     overflow: auto; /* 1 */
     vertical-align: top; /* 2 */
+    width: 400px;
+    height: 90px;
 }
 
 table {
