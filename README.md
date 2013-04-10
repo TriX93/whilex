@@ -17,3 +17,6 @@ Una volta che avremo un buon numero di proposte per feature parleremo di come fa
 Notate dei bug sul sito segnalateli qui su github o fate un commit, sappiamo che non è granchè ma il tempo a disposizione era poco e avevamo bisogno di una piattaforma per le proposte.  
 Forkate questo progetto e fate le vostre modifiche per migliorarlo.  
 Avete una proposta che smantella whilex? Scrivetela! Certo non proponete un sistema di controllo di volti per il login che non è il caso.  
+
+###Come faremo
+Ecco come faremo: https://github.com/whilex/whilex/wiki/Workflow-di-Progettazione
