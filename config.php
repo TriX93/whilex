@@ -63,10 +63,10 @@
 	define("DEFAULT_TIMEZONE","Europe/Rome"); // Set the default timezone
 	date_default_timezone_set(DEFAULT_TIMEZONE); // Set the default time zone.
 	setlocale(LC_ALL,'it_IT.utf-8'); // Set the default locale.
-	// define("DB_NAME","whilex");
-	// define("DB_HOST","localhost");
-	// define("DB_USER","root");
-	// define("DB_PASSWORD","password");
+	define("DB_NAME","whilex");
+	define("DB_HOST","localhost");
+	define("DB_USER","root");
+	define("DB_PASSWORD","password");
 	if(MODE_ENV){ // Set the ENV mode of the site
 		ini_set('display_errors',1); // Do not show errors(0) or showing (1)
 		ini_set('error_reporting', E_ALL | E_STRICT | E_WARNING | E_NOTICE | E_COMPILE_ERROR); // Display every errors
@@ -79,32 +79,34 @@
 	    define('PHP_VERSION_ID', ($version[0] * 10000 + $version[1] * 100 + $version[2]));
 	}
 	/************** END Global Configuration ********************************************/
-	$db="whilex";
-	$dbhost="localhost";
-	$dbuser="root";
-	$dbpwd="password";
+	//$db="whilex";
+	//$dbhost="localhost";
+	//$dbuser="root";
+	//$dbpwd="password";
 	//$debug = 0; with MODE_ENV we don't need this ....
 
 	/**
-	* function mysql_start
+	* function mysql_start()
+	* Starting the mysql database
+	* @version 0.2
+	* TODO :
+	*   - Create a general handler for database like POSTGRE, Access, ORACLE etc...
 	*/
-	function mysql_start(){
-		$db="whilex";
-		$dbhost="localhost";
-		$dbuser="root";
-		$dbpwd="password";
+	function mysql_start(){ // Throwable PDOException
+		//$db="whilex";
+		//$dbhost="localhost";
+		//$dbuser="root";
+		//$dbpwd="password";
 	
-		$dbtype = "mysql:dbname=$db;host=$dbhost";
-
-		try {
-			$mysql = new PDO($dbtype , $dbuser, $dbpwd);
-		} catch (PDOException $e) {
+		$dbtype = 'mysql:dbname='.DB_NAME.';host='.DB_HOST.'';
+		try{
+			$mysql = new PDO($dbtype , DB_USER, DB_PASSWORD);
+		}catch(PDOException $e) {
+			// It's better if we create an exception handler here
 			echo 'MySQL Error: ' . $e->getMessage();
 		}
-		
-		mysql_connect($dbhost,$dbuser,$dbpwd) or die(mysql_error());
-		mysql_select_db($db) or die(mysql_error()); 
-		
+		mysql_connect(DB_HOST,DB_USER,DB_PASSWORD) or die(mysql_error());
+		mysql_select_db(DB_NAME) or die(mysql_error()); 
 		return $mysql;
 	}
 	/**
@@ -112,7 +114,6 @@
 	*/
 	function mysql_kill($mysql){
 		$mysql = null;
-		
 		return 1;
 	}
 ?>
