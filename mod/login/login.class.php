@@ -36,7 +36,7 @@ class account extends phpSecurityClass{
 		
 		$pass = sha1($pass);
 		
-		$sql = "SELECT id FROM users WHERE nick = '$nick' AND pass = '$pass' AND hide = '0'";
+		$sql = "SELECT id FROM users WHERE nick = '$nick' AND pass = '$pass' AND hide = 0 LIMIT 1";
 		$result = $mysql->query($sql);
 		$row = $result->fetch(PDO::FETCH_ASSOC);
 		if(empty($row['id']))
@@ -59,7 +59,7 @@ class account extends phpSecurityClass{
 		$row = mysql_fetch_array($array);
 		
 		if(!empty($row['id']) && $this->code($hash) && $this->email($mail)){
-			$sql = "UPDATE users SET hide = '0' WHERE email = '$mail' AND hash = '$hash'"; 		
+			$sql = "UPDATE users SET hide = '0' WHERE email = '$mail' AND hash = '$hash' LIMIT 1"; 		
 			$result = mysql_query($sql) or die(mysql_error());
 			
 			echo "<script>alert('Account Abilitato');</script>";
@@ -97,7 +97,7 @@ class account extends phpSecurityClass{
 		if($returned == 1){
 			$hash = md5(rand(0,999999));
 			
-			$sql = "SELECT id FROM users WHERE email = '$mail' OR nick = '$nick'";
+			$sql = "SELECT id FROM users WHERE email = '$mail' OR nick = '$nick' LIMIT 1";
 			$array = mysql_query($sql) or die(mysql_error());
 			$row = mysql_fetch_array($array);
 			if(empty($row['id'])){
