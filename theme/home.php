@@ -8,7 +8,14 @@
 		  header ("location: index.php");
 	}
 	if(isset($_GET['page']) && $_GET['page'] == "logout"){
-		  $_SESSION['login'] = 0;
+		 session_start(); 
+		 session_unset(); 
+		 session_destroy();
+		 if(!isset($_SESSION)) session_start();
+		
+		 if(!isset($_SESSION['login'])){
+			$_SESSION['login'] = 0;
+		 }  
 		  header ("location: index.php");
 	}
 	?>

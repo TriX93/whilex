@@ -20,6 +20,12 @@
  *   You should have received a copy of the GNU Affero General Public License
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
+	if(!isset($_SESSION)) session_start();
+
+	if(!isset($_SESSION['login'])){
+		$_SESSION['login'] = 0;
+	}
   include "config.php";
   include "mod/login/login.class.php";
   $login = new account();
@@ -35,6 +41,10 @@
 		<?php   
 			if(!empty($_GET['hash']) && !empty($_GET['mail'])){
 				$login->account_enable($_GET['hash'],$_GET['mail']);
+				 session_start(); 
+				 session_unset(); 
+				 session_destroy();
+				 if(!isset($_SESSION)) session_start();
 			}
 			header( "refresh:1;url=http://www.whilex.it/" ); 
 		?>
