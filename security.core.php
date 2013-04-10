@@ -39,6 +39,14 @@ class phpSecurityClass
 		return 0;
 	}
 	
+	public function text($input)
+	{
+		if (preg_match("/^([A-Za-z0-9_\-\.\à\ù\ò\è\é\È\É\ \Ò\?\!\À\Ù\ì\í\Ì\Í\'\s])+$/", $input))
+			return 1;	
+		
+		return 0;
+	}
+	
 	public function name($input)
 	{
 		if (preg_match("/^([A-Za-z\à\ù\ò\è\é\È\É\Ò\À\Ù\ì\í\Ì\Í\'\s])+$/", $input))
@@ -76,7 +84,7 @@ class phpSecurityClass
 	
 	public function password($input)
 	{	
-		return sha512($input);
+		return sha1($input);
 	}
 	
 	public function url($input)

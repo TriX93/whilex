@@ -59,17 +59,20 @@ final class setup {
 
 			CREATE TABLE IF NOT EXISTS `main_poll` (
 			  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+			  `id_user_rif` bigint(20)  NOT NULL,
 			  `title` varchar(100) NOT NULL,
 			  `content` TEXT NOT NULL,
 			  `status` bigint(20) NOT NULL DEFAULT '0',
 			  `del_status` bigint(20) NOT NULL DEFAULT '0',
+			  `qtype` int(10)  NOT NULL,
 			  `time` date NOT NULL,
 			  PRIMARY KEY (`id`)
 			) ENGINE=INNODB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 			
-			CREATE TABLE IF NOT EXISTS `sub_pull` (
+			CREATE TABLE IF NOT EXISTS `sub_poll` (
 			  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
 			  `id_poll_rif` bigint(20)  NOT NULL,
+			  `id_user_rif` bigint(20)  NOT NULL,
 			  `content` TEXT NOT NULL,
 			  `time` date NOT NULL,
 			  PRIMARY KEY (`id`)

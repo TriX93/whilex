@@ -41,9 +41,10 @@ class account extends phpSecurityClass{
 		$row = $result->fetch(PDO::FETCH_ASSOC);
 		if(empty($row['id']))
 			$_SESSION['login'] = 0;
-		else
+		else{
 			$_SESSION['login'] = 1;
-
+			$_SESSION['userid'] = $row['id'];
+		}
 		mysql_kill($mysql);
 		
 		return 1;
@@ -51,6 +52,8 @@ class account extends phpSecurityClass{
 	
 	public function account_enable($hash,$mail)
 	{
+		$mysql = mysql_start();
+		
 		$sql = "SELECT id FROM users WHERE email = '$mail' AND hash = '$hash'";
 		$array = mysql_query($sql) or die(mysql_error());
 		$row = mysql_fetch_array($array);
@@ -70,7 +73,7 @@ class account extends phpSecurityClass{
 	
 	public function account_register($nick,$mail,$pass1,$pass2)
 	{
-		mysql_start();
+		$mysql = mysql_start();
 		$returned = 0;
 		
 		$data=time(); 
@@ -104,14 +107,14 @@ class account extends phpSecurityClass{
 								")
 				or die(mysql_error()); 
 				
-				mail($mail, 'whilex($x) - Verifica Email', "Conferma la registrazione clickando qui: http://www.whilex.it/confirm.php?hash='.$hash.'&mail='.$mail.'");
+				mail($mail, 'whilex($x) - Verifica Email', "Conferma la registrazione clickando qui: http://www.whilex.it/confirm.php?hash=$hash&mail=$mail");
 			}else{
 				$returned = 2;
 			}
 		}
 		
 		if($returned == 1){
-			echo "Hai registrato il tuo account.<br/>Conferma l'email per apparire in homepage.";
+			echo "Hai registrato il tuo account.<br/>Conferma l'email per accedere.";
 		}else if($returned == 2){
 			echo "Errore: Email già presente nel database";
 		}

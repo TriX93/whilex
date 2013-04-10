@@ -19,7 +19,9 @@
 		<h1>Home</h1>
 		<ul id="nav">
 			<li><a href="./">Home</a></li>
+			<?php if($_SESSION['login'] == 0){ ?>
 			<li><a href="?page=reg">Register</a></li>
+			<?php } ?>
 			<?php if($_SESSION['login'] == 1){ ?>
 			<li><a href="?page=poll">Sondaggi</a></li>
 			<li><a href="?page=logout">Logout</a></li>

@@ -20,8 +20,8 @@
  *   You should have received a copy of the GNU Affero General Public License
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+  include "config.php";
   include "mod/login/login.class.php";
-  include "security.core.php";
   $login = new account();
 ?>
 <html>
@@ -31,13 +31,12 @@
 	</head>
 
 	<body>
-		<p id="line1">TorEngine - Verifica Email </p>
 		<p>
 		<?php   
 			if(!empty($_GET['hash']) && !empty($_GET['mail'])){
-				$login->enable($_GET['hash'],$_GET['mail']);
+				$login->account_enable($_GET['hash'],$_GET['mail']);
 			}
-			header( "refresh:3;url=http://www.whilex.it/" ); 
+			header( "refresh:1;url=http://www.whilex.it/" ); 
 		?>
 		</p>
 		
