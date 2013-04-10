@@ -34,6 +34,19 @@ class poll extends phpSecurityClass{
 			return 0;
 		}
 		
+		$text = str_replace("&","&amp;",$text);
+		$text = str_replace("<","&lt;",$text);
+		$text = str_replace(">","&gt;",$text);
+		$text = str_replace("\"","&quot;",$text);
+		$text = str_replace("'","&apos;",$text);
+		
+		$title = str_replace("&","&amp;",$title);
+		$title = str_replace("<","&lt;",$title);
+		$title = str_replace(">","&gt;",$title);
+		$title = str_replace("\"","&quot;",$title);
+		$title = str_replace("'","&apos;",$title);
+		
+		
 		mysql_query("INSERT INTO 
 						main_poll (`title`,`content`,`id_user_rif`,`qtype`)
 						VALUES ('$title','$text','".$_SESSION['userid']."','".$qtype."')
@@ -53,6 +66,13 @@ class poll extends phpSecurityClass{
 			$_SESSION['login'] = 0;
 			return 0;
 		}
+		
+		$text = str_replace("&","&amp;",$text);
+		$text = str_replace("<","&lt;",$text);
+		$text = str_replace(">","&gt;",$text);
+		$text = str_replace("\"","&quot;",$text);
+		$text = str_replace("'","&apos;",$text);
+		
 		
 		mysql_query("INSERT INTO 
 						sub_poll (`content`,`id_user_rif`,`id_poll_rif`)
@@ -89,16 +109,16 @@ class poll extends phpSecurityClass{
 			return 0;
 		}
 		
-		$sql = "SELECT * FROM main_poll WHERE id = '".$id."' ORDER BY id DESC";
+		$sql = "SELECT * FROM main_poll,users WHERE main_poll.id_user_rif = users.id AND main_poll.id = '".$id."' ORDER BY users.id DESC";
 		$array = mysql_query($sql) or die(mysql_error());
 		while($row = mysql_fetch_array($array)){
-			echo "<h2><a href=\"index.php?page=poll&view=".$id."\">".$row['title']."?</a></h2>".$row['content']."<br /><br /><hr>";
+			echo "<h2><a href=\"index.php?page=poll&view=".$id."\">".$row['title']."?</a></h2>@".$row['nick'].": ".$row['content']."<br /><br /><hr>";
 		}
 		
-		$sql = "SELECT * FROM sub_poll WHERE id_poll_rif = '".$id."' ORDER BY id ASC";
+		$sql = "SELECT * FROM sub_poll,users WHERE sub_poll.id_user_rif = users.id AND sub_poll.id_poll_rif = '".$id."' ORDER BY sub_poll.id ASC";
 		$array = mysql_query($sql) or die(mysql_error());
 		while($row = mysql_fetch_array($array)){
-			echo "<br />".$row['content']."<br /><br /><hr>";
+			echo "<br />@".$row['nick'].": ".$row['content']."<br /><br /><hr>";
 		}
 
 		mysql_kill($mysql);
