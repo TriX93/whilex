@@ -21,7 +21,16 @@
 	<form method="POST" action="index.php?page=poll&quest=send">
 		<table cellpadding="2" cellspacing="2">
 		<tr><td>Domanda:</td><td> <input type="text" name="title" value=""><br /><br /></td></tr>
-		<tr><td>Tipologia:</td><td> <select name="type"><option value="1">Generale</option><option value="2">Richiesta Up/Down DevMaster</option><option value="3">Framework</option><option value="4">Moduli/Classi</option><option value="1">Sezioni/Categorie</option></select><br /><br /></td></tr>
+		<tr><td>Tipologia:</td><td> 
+			<select name="type">
+				<option value="1">Generale</option>
+				<option value="2">Richiesta Up/Down DevMaster</option>
+				<option value="3">Documentazione</option>
+				<option value="4">Struttura Classi/Moduli</option>
+				<option value="5">Struttura Progetto</option>
+				<option value="6">Proposte Tipologia Community</option>
+				<option value="7">Richieste Features</option>
+			</select><br /><br /></td></tr>
 		<tr><td>Contenuto:</td><td> <textarea type="text" name="text"></textarea></td></tr>
 		<tr><td> </td><td><br /><input type="submit" value="Pubblica"></td></tr>
 		</table><br /><br />
