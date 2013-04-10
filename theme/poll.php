@@ -15,7 +15,14 @@
 	}
 	?>
 	
-	Il nostro obbiettivo è creare una piattaforma per sviluppatori da zero. Completa di tutto ciò che abbiamo bisogno. Fai una domanda focalizzandoti su questo concetto: cosa ti serve? cosa vorresti in una community? quali soluzioni hai in mente?
+	Il nostro obiettivo è creare una piattaforma per sviluppatori fatta da sviluppatori.<br>
+	Con il tuo aiuto tramite i sondaggi tutti insieme valuteremo cosa realizzare e in che modo anche con il tuo aiuto da programmatore.<br>
+	Per fare la tua proposta segui questi punti:<br>
+	1) Sii chiaro<br>
+	2) Cosa vorresti in questa community a parole tue<br>
+	3) Descrivi come si potrebbe realizzare<br>
+	4) Allega siti o documenti di esempio<br>
+	5) Spiega perchè questa idea andrebbe inserita in questo progetto
 	<br /><br />
 	<?php if(!isset($_GET['view'])){ ?>
 	<form method="POST" action="index.php?page=poll&quest=send">
@@ -26,6 +33,7 @@
 		<tr><td> </td><td><br /><input type="submit" value="Pubblica"></td></tr>
 		</table><br /><br />
 	</form>
+	<hr>
 	<?php $poll->quest(); ?>
 	<?php }else if(isset($_GET['view'])){ 
 	$poll->idquest($_GET['view']);
