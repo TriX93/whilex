@@ -58,7 +58,7 @@
 	<p>Tutto il progetto è sotto licenza AGPLv3 / GPLv3</p>
 	<br />
 	<h2>IRC</h2>
-	<p>Si comunica via IRC. Siamo nel server freenode: #whilex</p>
+	<p>Si comunica via IRC. Siamo nel server freenode: <a href="http://webchat.freenode.net?channels=whilex">#whilex</a></p>
 	<br />
 	<h2>Quando si inizia?</h2>
 	<p>Il 10 aprile vengono aperte le iscrizioni come developer di tipo "supporter". 
