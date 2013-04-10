@@ -45,7 +45,7 @@
 	/**
 	* Start global configuration Settings
 	* @version 0.1 _NOTTESTED
-	* CANGESLOG:
+	* ChangeLog:
 	*   - Add first define & useful functions
 	* TODO:
 	*   - Testing everything will be better
