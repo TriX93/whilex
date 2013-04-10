@@ -1,3 +1,10 @@
+<?php 
+if(!isset($_SESSION)) session_start();
+	
+if(!isset($_SESSION['login'])){
+	$_SESSION['login'] = 0;
+ }
+?>
 <!DOCTYPE html> 
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="it-IT"> 
 <head>
