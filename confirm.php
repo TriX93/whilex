@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php
 /*
  * While($x) 
@@ -19,36 +20,36 @@
  *   You should have received a copy of the GNU Affero General Public License
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-	$db="whilex";
-	$dbhost="localhost";
-	$dbuser="root";
-	$dbpwd="password";
-		
-	$debug = 0;
 
-	function mysql_start(){
-		$db="whilex";
-		$dbhost="localhost";
-		$dbuser="root";
-		$dbpwd="password";
-	
-		$dbtype = "mysql:dbname=$db;host=$dbhost";
+	if(!isset($_SESSION)) session_start();
 
-		try {
-			$mysql = new PDO($dbtype , $dbuser, $dbpwd);
-		} catch (PDOException $e) {
-			echo 'MySQL Error: ' . $e->getMessage();
-		}
-		
-		mysql_connect($dbhost,$dbuser,$dbpwd) or die(mysql_error());
-		mysql_select_db($db) or die(mysql_error()); 
-		
-		return $mysql;
+	if(!isset($_SESSION['login'])){
+		$_SESSION['login'] = 0;
 	}
-
-	function mysql_kill($mysql){
-		$mysql = null;
-		
-		return 1;
-	}
+  include "config.php";
+  include "mod/login/login.class.php";
+  $login = new account();
 ?>
+<html>
+	<head>
+		<title>while($x) { conferma email }</title>
+		<meta charset="utf-8">
+	</head>
+
+	<body>
+		<p>
+		<?php   
+			if(!empty($_GET['hash']) && !empty($_GET['mail'])){
+				$login->account_enable($_GET['hash'],$_GET['mail']);
+				 session_start(); 
+				 session_unset(); 
+				 session_destroy();
+				 if(!isset($_SESSION)) session_start();
+			}
+			header( "refresh:1;url=http://www.whilex.it/" ); 
+		?>
+		</p>
+		
+		<br />
+	</body>
+</html>
