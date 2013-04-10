@@ -26,7 +26,7 @@
 	* @return String $buffer - The output compressed as fuck
 	* @author Claudio Ludovico Panetta (@Ludo237)
 	* @version 0.1 _Tested (PHP_UNIT)
-	* @example For the maximum result it should be used with ob_start() function.
+	* @example For the maximum result use it w/ ob_start() function.
 	*/
 	function compress($buffer) {
 	    $buffer = preg_replace('!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $buffer); // remove comments
