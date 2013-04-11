@@ -48,8 +48,8 @@ class poll extends phpSecurityClass{
 		
 		
 		mysql_query("INSERT INTO 
-						main_poll (`title`,`content`,`id_user_rif`,`qtype`)
-						VALUES ('$title','$text','".$_SESSION['userid']."','".$qtype."')
+						poll_post (`title`,`content`,`id_user`,`type`,`qtype`)
+						VALUES ('$title','$text','".$_SESSION['userid']."','Q','".$qtype."')
 						")
 		or die(mysql_error()); 
 
@@ -75,8 +75,8 @@ class poll extends phpSecurityClass{
 		
 		
 		mysql_query("INSERT INTO 
-						sub_poll (`content`,`id_user_rif`,`id_poll_rif`)
-						VALUES ('$text','".$_SESSION['userid']."','$id')
+						poll_post (`content`,`id_user`,`parent_id`, `type`)
+						VALUES ('$text','".$_SESSION['userid']."','$id', 'A')
 						")
 		or die(mysql_error()); 
 
@@ -89,10 +89,13 @@ class poll extends phpSecurityClass{
 	{
 		$mysql = mysql_start();
 		
-		$sql = "SELECT * FROM main_poll ORDER BY id DESC";
+		$sql = "SELECT * FROM poll_post WHERE `type` LIKE 'Q' ORDER BY id DESC";
 		$array = mysql_query($sql) or die(mysql_error());
 		while($row = mysql_fetch_array($array)){
-			echo "<h2><a href=\"index.php?page=poll&view=".$row['id']."\">".$row['title']."?</a></h2>";
+			echo "<div>";
+            echo "<h2><a href=\"index.php?page=poll&view=".$row['id']."\">".$row['title']."?</a></h2>";
+            echo "<p>".$row['content']."<p>";
+            echo "</div>";
 		}
 
 		mysql_kill($mysql);
@@ -109,13 +112,13 @@ class poll extends phpSecurityClass{
 			return 0;
 		}
 		
-		$sql = "SELECT * FROM main_poll,users WHERE main_poll.id_user_rif = users.id AND main_poll.id = '".$id."' ORDER BY users.id DESC";
+		$sql = "SELECT * FROM poll_post,users WHERE poll_post.id_user = users.id AND poll_post.id = '".$id."' ORDER BY users.id DESC";
 		$array = mysql_query($sql) or die(mysql_error());
 		while($row = mysql_fetch_array($array)){
 			echo "<h2><a href=\"index.php?page=poll&view=".$id."\">".$row['title']."?</a></h2>@".$row['nick'].": ".$row['content']."<br /><br /><hr>";
 		}
 		
-		$sql = "SELECT * FROM sub_poll,users WHERE sub_poll.id_user_rif = users.id AND sub_poll.id_poll_rif = '".$id."' ORDER BY sub_poll.id ASC";
+		$sql = "SELECT * FROM poll_post,users WHERE poll_post.id_user = users.id AND poll_post.parent_id = '".$id."' ORDER BY poll_post.id ASC";
 		$array = mysql_query($sql) or die(mysql_error());
 		while($row = mysql_fetch_array($array)){
 			echo "<br />@".$row['nick'].": ".$row['content']."<br /><br /><hr>";
