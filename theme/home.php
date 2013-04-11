@@ -2,9 +2,9 @@
 	<br />
 	<?php
 	if(isset($_GET['page']) && $_GET['page'] == "login"){
-		  include "mod/login/login.class.php";
-		  $login = new account();
-		  $login->login($_POST['nickname'],$_POST['pass']);
+		  //include "mod/login/login.class.php";
+		  $login = new Login($_POST['nickname'],$_POST['pass']);
+		  //$login->login($_POST['nickname'],$_POST['pass']);
 		  header ("location: index.php");
 	}
 	if(isset($_GET['page']) && $_GET['page'] == "logout"){

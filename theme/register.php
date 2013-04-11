@@ -9,7 +9,7 @@ if(isset($_GET['start'])){
 	  echo "<br /><br />";
 }
 ?>
-<form method="POST" action="?page=reg&start=1">
+<form method="POST" action="?page=reg&amp;start=1">
 	<table>
 	<tr><td>Username:</td><td> <input type="text" name="nickname" value=""><br /><br /></td></tr>
 	<tr><td>Password:</td><td> <input type="password" name="pass1" value=""><br /><br /></td></tr>
