@@ -1,12 +1,19 @@
 <?php
-include "header.php"; 
+include "skinning.class.php"; 
+
+if(!isset($_SESSION)) session_start();
+	
+if(!isset($_SESSION['login'])){
+	$_SESSION['login'] = 0;
+}
+
+$view =  new skinning();
 
 if(isset($_GET['page']) && $_GET['page'] == "reg")
-	include "register.php"; 
+	$view->render("register.php"); 
 else if(isset($_GET['page']) && $_GET['page'] == "poll" && $_SESSION['login'] == 1)
-	include "poll.php"; 
+	$view->render("poll.php"); 
 else
-	include "home.php"; 
+	$view->render("home.php"); 
 	
-include "footer.php"; 
 ?>

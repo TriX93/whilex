@@ -1,10 +1,3 @@
-<?php 
-if(!isset($_SESSION)) session_start();
-	
-if(!isset($_SESSION['login'])){
-	$_SESSION['login'] = 0;
- }
-?>
 <!DOCTYPE html> 
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="it-IT"> 
 <head>
@@ -34,3 +27,12 @@ if(!isset($_SESSION['login'])){
 			<li><a href="?page=logout">Logout</a></li>
 			<?php } ?>
 		</ul>
+		
+        <?php $this->pageContent(); ?>
+		
+		<div id="foot">Copyleft 2013</div>
+    </div>
+</div>
+<script type="text/javascript" src="cdn/js/jquery.min.js"></script>
+</body>
+</html>
