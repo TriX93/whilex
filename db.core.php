@@ -56,27 +56,21 @@ final class setup {
 			  `time` date NOT NULL,
 			  PRIMARY KEY (`id`)
 			) ENGINE=INNODB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
-
-			CREATE TABLE IF NOT EXISTS `main_poll` (
-			  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-			  `id_user_rif` bigint(20)  NOT NULL,
-			  `title` varchar(100) NOT NULL,
-			  `content` TEXT NOT NULL,
-			  `status` bigint(20) NOT NULL DEFAULT '0',
-			  `del_status` bigint(20) NOT NULL DEFAULT '0',
-			  `qtype` int(10)  NOT NULL,
-			  `time` date NOT NULL,
-			  PRIMARY KEY (`id`)
-			) ENGINE=INNODB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
-			
-			CREATE TABLE IF NOT EXISTS `sub_poll` (
-			  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-			  `id_poll_rif` bigint(20)  NOT NULL,
-			  `id_user_rif` bigint(20)  NOT NULL,
-			  `content` TEXT NOT NULL,
-			  `time` date NOT NULL,
-			  PRIMARY KEY (`id`)
-			) ENGINE=INNODB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+            
+            CREATE TABLE IF NOT EXISTS `poll_post` (
+              `id` bigint(20) NOT NULL AUTO_INCREMENT,
+              `id_user` int(11) DEFAULT NULL,
+              `title` varchar(100) DEFAULT NULL,
+              `content` text,
+              `type` enum('A','Q') DEFAULT NULL,
+              `approved` enum('Y','N') DEFAULT NULL,
+              `qtype` int(10) DEFAULT NULL,
+              `time` date DEFAULT NULL,
+              `vote_up` int(10) DEFAULT NULL,
+              `vote_down` int(10) DEFAULT NULL,
+              `parent_id` bigint(20) DEFAULT NULL,
+              PRIMARY KEY (`id`)
+            ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 			
 			CREATE TABLE IF NOT EXISTS `poll_vote` (
 			  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
