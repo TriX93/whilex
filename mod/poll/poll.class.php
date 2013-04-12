@@ -87,11 +87,10 @@ class poll extends phpSecurityClass{
 	
 	public function quest()
 	{
-		$mysql = mysql_start();
-		$sql = "SELECT * FROM poll_post WHERE `type` LIKE 'Q' ORDER BY id DESC";
-		$array = mysql_query($sql) or die(mysql_error());
-		while($row = mysql_fetch_array($array)){ 
-                    $ansCount = mysql_fetch_array(mysql_query("SELECT COUNT(1) FROM poll_post WHERE `type` LIKE 'A' AND `parent_id` = ".$row['id']));
+		$mysql = Database::init();
+                $array = $mysql->select('poll_post')->where('type', 'Q')->orderby('id', 'DESC')->run();
+		foreach($array as $row){ 
+                    $ansCount = count($mysql->select('poll_post')->where('type', 'A')->andwhere('parent_id', $row['id'])->run());
                     ?>
 		     <div>
                           <h2><a href=\index.php?page=poll&view=<?php echo $row['id']; ?>> <?php echo $row['title']; ?></a></h2>
@@ -102,24 +101,21 @@ class poll extends phpSecurityClass{
                           
                      </div>
 		<?php }
-
-		mysql_kill($mysql);
 		
 		return 1;
 	}
 	
 	public function idquest($id)
 	{
-		$mysql = mysql_start();
-		
+		$mysql = Database::init();
 		if(!$this->num($id)){
 			$_SESSION['login'] = 0;
 			return 0;
 		}
 		
 		$sql = "SELECT * FROM poll_post,users WHERE poll_post.id_user = users.id AND poll_post.id = '".$id."' ORDER BY users.id DESC";
-		$array = mysql_query($sql) or die(mysql_error());
-		while($row = mysql_fetch_array($array)){
+		
+		foreach($array as $row){
 			echo "<h2><a href=\"index.php?page=poll&view=".$id."\">".$row['title']."?</a></h2>@".$row['nick'].": ".$row['content']."<br /><br /><hr>";
 		}
 		
