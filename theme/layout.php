@@ -5,7 +5,8 @@
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" href="cdn/css/style.css" />
 <link href='http://fonts.googleapis.com/css?family=Quattrocento+Sans:700|Quantico:700' rel='stylesheet' type='text/css'>
-<title>while($x) { Developer Community }</title>
+<link href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
+    <title>while($x) { Developer Community }</title>
 </head>
 <body>
 <div id="container">

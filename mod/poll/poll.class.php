@@ -88,15 +88,20 @@ class poll extends phpSecurityClass{
 	public function quest()
 	{
 		$mysql = mysql_start();
-		
 		$sql = "SELECT * FROM poll_post WHERE `type` LIKE 'Q' ORDER BY id DESC";
 		$array = mysql_query($sql) or die(mysql_error());
-		while($row = mysql_fetch_array($array)){
-			echo "<div>";
-            echo "<h2><a href=\"index.php?page=poll&view=".$row['id']."\">".$row['title']."?</a></h2>";
-            echo "<p>".$row['content']."<p>";
-            echo "</div>";
-		}
+		while($row = mysql_fetch_array($array)){ 
+                    $ansCount = mysql_fetch_array(mysql_query("SELECT COUNT(1) FROM poll_post WHERE `type` LIKE 'A' AND `parent_id` = ".$row['id']));
+                    ?>
+		     <div>
+                          <h2><a href=\index.php?page=poll&view=<?php echo $row['id']; ?>> <?php echo $row['title']; ?></a></h2>
+                          <div class="poolInfoBar">
+                              <span class="ansCounter"><?php echo $ansCount[0]; ?> <span class="icon-comments"></span>  </span>  
+                          </div>
+                          <p><?php echo $row['content']; ?> </p>
+                          
+                     </div>
+		<?php }
 
 		mysql_kill($mysql);
 		
